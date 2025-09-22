@@ -1,0 +1,50 @@
+# Program Estimasi Biaya Bahan Bangunan
+
+nama_pelanggan = input("Masukkan Nama Pelanggan: ")          # string
+jumlah_batu_bata = int(input("Masukkan jumlah batu bata: ")) # int
+jumlah_semen = int(input("Masukkan jumlah karung semen: "))  # int
+
+harga_batu_bata = 100
+harga_semen = 100000
+
+total_awal = (jumlah_batu_bata * harga_batu_bata) + (jumlah_semen * harga_semen)
+
+is_paket_hemat = (jumlah_batu_bata == 500 and jumlah_semen == 5)
+is_paket_ultra = (jumlah_batu_bata == 2000 and jumlah_semen == 16)
+
+# Tentukan diskon
+if is_paket_hemat:
+    diskon_persen = 15/100
+    keterangan_diskon = "Paket Hemat (15%)"
+elif is_paket_ultra:
+    diskon_persen = 30/100
+    keterangan_diskon = "Paket Ultra Mantap (30%)"
+else:
+    diskon_persen = 0
+    keterangan_diskon = "Tidak Ada Diskon"
+
+# Hitung jumlah diskon dan total akhir
+jumlah_diskon = total_awal * diskon_persen
+total_akhir = float(total_awal - jumlah_diskon)
+
+print("==========================================")
+print("       ESTIMASI BIAYA BAHAN BANGUNAN      ")
+print("==========================================")
+print(f"Nama Pelanggan: {nama_pelanggan}")
+print("---------------------------------------------------------")
+print("| Barang     | Jumlah | Harga Satuan  |")
+print("---------------------------------------------------------")
+print(f"| Batu Bata  | {jumlah_batu_bata:<6} | Rp{harga_batu_bata:<12}|")
+print(f"| Semen      | {jumlah_semen:<6} | Rp{harga_semen:<12}|")
+print("---------------------------------------------------------")
+print(f"Total Biaya Awal              : Rp {total_awal:,}")
+print(f"Diskon yang Didapat           : {keterangan_diskon}")
+print(f"Jumlah Diskon                 : Rp {int(jumlah_diskon):,}")
+print("---------------------------------------------------------")
+print(f"TOTAL BIAYA AKHIR             : Rp {int(total_akhir):,}")
+print("==========================================")
+
+
+
+
+
