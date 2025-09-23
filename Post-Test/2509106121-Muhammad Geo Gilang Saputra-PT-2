@@ -19,9 +19,8 @@ if is_paket_hemat:
 elif is_paket_ultra:
     diskon_persen = 30/100
     keterangan_diskon = "Paket Ultra Mantap (30%)"
-else:
-    diskon_persen = 0
-    keterangan_diskon = "Tidak Ada Diskon"
+else: diskon_persen = 0
+keterangan_diskon = "Diskon_Persen (0%)"
 
 # Hitung jumlah diskon dan total akhir
 jumlah_diskon = total_awal * diskon_persen
